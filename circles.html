@@ -47,14 +47,12 @@
 			  style: "fill: white"
 			});
 
-		//the key will be the HTML id and the value will be the radius
 		circles['circle_'+counter] = { radius: r };
 
 		counter++;
 		document.getElementById('svg').appendChild(circle);
 	}//end of createCircle
 
-	//go through all the circles and update its radius and background color
 	function updateCircles()
 	{
 		for(circle in circles)
@@ -69,12 +67,10 @@
 			// console.log(color);
 			circles[circle].radius = circles[circle].radius+1;
 
-			//update the radius and the background color
 			el.setAttribute("r", circles[circle].radius);
 			el.setAttribute("style", "fill: rgb("+color+"); ");
 			console.log(el.style.fill+' this is the style');
 
-			//if the circle radius is greater than 80, remove the dom and remove its value in the circles variable/object
 			if(circles[circle].radius > 80)
 			{
 				document.getElementById('svg').removeChild(el);
